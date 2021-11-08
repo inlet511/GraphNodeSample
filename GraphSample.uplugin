@@ -1,0 +1,23 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "GraphSample",
+	"Description": "Learning Code",
+	"Category": "Other",
+	"CreatedBy": "KenAn",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": false,
+	"IsBetaVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "GraphSample",
+			"Type": "Editor",
+			"LoadingPhase": "Default"
+		}
+	]
+}
