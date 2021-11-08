@@ -13,6 +13,7 @@
 #include "SGraphPinVector2D.h"
 #include "SGraphPinVector4.h"
 #include "SGraphPinInteger.h"
+#include "MyGraphPanelNodeFactory.h"
 
 void SMyGraphNode::Construct(const FArguments& InArgs, UMyNode* MarkerNode)
 {
@@ -84,7 +85,7 @@ void SMyGraphNode::UpdateGraphNode()
 	NewPin->SetIsEditable(IsEditable); \
 	this->AddPin(NewPin.ToSharedRef());
 
-#define VERSION_SET 0
+#define VERSION_SET 1
 void SMyGraphNode::CreatePinWidgets()
 {
 	UMyNode* myNode = CastChecked<UMyNode>(GraphNode);
@@ -95,7 +96,7 @@ void SMyGraphNode::CreatePinWidgets()
 
 		for (UEdGraphPin* CurrentPin : myNode->Pins)
 		{
-			TSharedPtr<SGraphPin> NewPin = SNew(SMyPin, CurrentPin);
+			TSharedPtr<SGraphPin> NewPin = FMyGraphPanelPinFactory::CreatePin(CurrentPin);
 			NewPin->SetIsEditable(IsEditable);
 
 			this->AddPin(NewPin.ToSharedRef());

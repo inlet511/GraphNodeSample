@@ -38,10 +38,10 @@ public:
 	{
 		return FPinConnectionResponse(CONNECT_RESPONSE_MAKE, TEXT("Not implemented by this schema"));
 	}
-	virtual class FConnectionDrawingPolicy* CreateConnectionDrawingPolicy(int32 InBackLayerID, int32 InFrontLayerID, float InZoomFactor, const FSlateRect& InClippingRect, class FSlateWindowElementList& InDrawElements, class UEdGraph* InGraphObj) const override
-	{ 
-		return new FMyDrawingPolicy(InBackLayerID,InFrontLayerID,InZoomFactor,InClippingRect, InDrawElements,InGraphObj);
-	}
+	//virtual class FConnectionDrawingPolicy* CreateConnectionDrawingPolicy(int32 InBackLayerID, int32 InFrontLayerID, float InZoomFactor, const FSlateRect& InClippingRect, class FSlateWindowElementList& InDrawElements, class UEdGraph* InGraphObj) const override
+	//{ 
+	//	return new FMyDrawingPolicy(InBackLayerID,InFrontLayerID,InZoomFactor,InClippingRect, InDrawElements,InGraphObj);
+	//}
 
 
 };

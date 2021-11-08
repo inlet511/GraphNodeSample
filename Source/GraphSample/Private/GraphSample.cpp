@@ -12,7 +12,7 @@
 #include "GraphEditor.h"
 #include "EdGraph/EdGraphSchema.h"
 #include "MySchema.h"
-#include "MyNodeFactory.h"
+#include "MyGraphPanelNodeFactory.h"
 #include "EdGraphUtilities.h"
 
 static const FName GraphSampleTabName("GraphSample");
@@ -57,7 +57,9 @@ void FGraphSampleModule::StartupModule()
 		.SetDisplayName(LOCTEXT("FGraphSampleTabTitle", "GraphSample"))
 		.SetMenuType(ETabSpawnerMenuType::Hidden);
 
-	FEdGraphUtilities::RegisterVisualNodeFactory(MakeShareable(new FMyNodeFactory));
+	FEdGraphUtilities::RegisterVisualNodeFactory(MakeShareable(new FMyGraphPanelNodeFactory()));
+	FEdGraphUtilities::RegisterVisualPinFactory(MakeShareable(new FMyGraphPanelPinFactory()));
+	FEdGraphUtilities::RegisterVisualPinConnectionFactory(MakeShareable(new FMyGraphPanelConnectionFactory()));
 }
 
 void FGraphSampleModule::ShutdownModule()
